@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  tts:
+    build: .
+    container_name: tts_service
+    volumes:
+      - .:/app
+    command: python tts.py
+    stdin_open: true
+    tty: true
+
+  stt:
+    build: .
+    container_name: stt_service
+    volumes:
+      - .:/app
+    command: python stt.py
+    stdin_open: true
+    tty: true
